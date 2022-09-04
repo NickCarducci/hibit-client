@@ -1,11 +1,11 @@
 # openapi2-run.yaml
 swagger: '2.0'
 info:
-  title: mastercard-backbank # API_ID optional-string
+  title: hibit-client # API_ID optional-string
   #https://cloud.google.com/api-gateway/docs/get-started-cloud-run
-  description: node cloud run api mastercard p.12 customer keys # Sample API on API Gateway with a Cloud Run backend
+  description: node cloud run api client # Sample API on API Gateway with a Cloud Run backend
   version: 0.0.1
-host: "vault-co.in"
+host: "hibit.dev"
 basePath: "/" # https://stackoverflow.com/questions/71258737/making-a-cloud-firestore-rest-api-call-through-cloud-endpoints
 schemes:
 - https
@@ -14,7 +14,7 @@ consumes:
 produces:
 - application/json
 x-google-backend:
-  address: https://vault-co.in # APP_URL
+  address: https://hibit.dev # APP_URL
 paths:
   /:
     get:
@@ -139,9 +139,9 @@ securityDefinitions: #https://cloud.google.com/api-gateway/docs/authenticating-u
           #write: Grants write access
           #admin: Grants access to admin operations
     # Replace vaumoney with your project ID # X-Apigateway-Api-Userinfo
-    x-google-issuer: "https://securetoken.google.com/vaumoney"
+    x-google-issuer: "https://securetoken.google.com/hibit"
     x-google-jwks_uri: "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system.gserviceaccount.com"
-    x-google-audiences: "vaumoney"
+    x-google-audiences: "hibit"
 security:
   - firebase: [read]
 
